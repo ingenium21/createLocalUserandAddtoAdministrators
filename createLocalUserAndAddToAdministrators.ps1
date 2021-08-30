@@ -30,7 +30,7 @@ foreach ($s in $servers) {
          if ($users -like $username) {
             Write-Host "$username has been created on $($computer.name)"
             Write-Host "ensuring user is a local admin"
-            .\PsExec.exe -accepteula \\GEN1BLMVC01 net localgroup Administrators "$username" /add
+            .\PsExec.exe -accepteula \\ServerName net localgroup Administrators "$username" /add
          } Else {
             Write-Host "$username has not been created on $($computer.name)"
          }
